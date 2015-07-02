@@ -43,16 +43,18 @@ module swimEvent =
         member x.Minutes = minutes
         member x.Seconds = seconds
         member x.Hundreths = hundreths
-        static member toHundreths(a:SwimTime<'v>) =
-            let hourConversion = a.Hours * 36000
-            let minuteConversion = a.Minutes * 6000
-            let secondConversion = a.Seconds * 100
-            hourConversion + minuteConversion + secondConversion  + a.Hundreths
-        static member (-)  (a:SwimTime<'w>, b:SwimTime<'w>) = 
-            SwimTime<'w>.toHundreths(a) - SwimTime<'w>.toHundreths(b)
+        member x.absolute = (hours * 36000) + (minutes * 6000) + (seconds * 100) + hundreths
 
-  
-    
+        static member (-)  (a:SwimTime<'w>, b:SwimTime<'w>) = 
+              let difference = a.absolute - b.absolute
+              let hundreths = difference % 100
+              let difference = difference / 100
+              let seconds = difference % 60
+              let difference = difference / 60
+              let minutes = difference % 60 
+              let difference = difference / 60
+              new SwimTime<'w>(difference,minutes,seconds,hundreths)
+
 
     type SwimEvent = (Participants * Members * Distance * Stroke * Course)
     type Result< [<Measure>] 'a> = {swimmer: swimmer.Swimmer; event: SwimEvent; time: SwimTime<'a>}
