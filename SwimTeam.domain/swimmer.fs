@@ -31,41 +31,16 @@ module swimmer =
         | false -> {Years = 0; Months = 0; Days = 0}
 
 
-module swimEvent =
-    
-    type Time = Time of System.TimeSpan
-
-    type Distance = Distance of int
-
-    type Stroke = 
-    | Freestyle
-    | Backstroke
-    | Butterfly
-    | Breaststroke
-    | Medley
-
-    type Number =
-    | Individual
-    | Relay
-
-    type Participants =
-    | Boys
-    | Girls
-    | Mens
-    | Womens
-    | Mixed
-
-//    <UnitOfMeasure>
-    type Course =
-    | SCY
-    | SCM
-    | LCM
-    | LCY
-
-    type Result = (Participants * Number * Distance * Stroke * Course * Time )
-
 //    type SwimData =  XmlProvider<"MeetEntryTest.xml">
+module swimMeet =
+    type WarmUpsStart = WarmUpsStart of DateTime
+    type EventStart = EventStart of DateTime
+    type EventEnd = EventEnd of DateTime
+    type Format = 
+    | Prelims
+    | Finals 
 
     
-let kevin = {swimmer.Name = {firstName="Kevin"; lastName="Stevens"; middleName=None}; swimmer.DateOfBirth = new System.DateTime(2003,8,21); swimmer.UsaSwimmingId =  swimmer.UsaSwimmingId "234" } 
+module testData  =
+    let kevin = {swimmer.Name = {firstName="Kevin"; lastName="Stevens"; middleName=None}; swimmer.DateOfBirth = new swimmer.DateOfBirth(2003,8,21); swimmer.UsaSwimmingId =  swimmer.UsaSwimmingId "234" } 
 
