@@ -1,8 +1,6 @@
 ﻿namespace SwimTeam.domain
 
 open System
-//open FSharp.Data
-//open System.Xml.Linq
 
 module swimmer =
 
