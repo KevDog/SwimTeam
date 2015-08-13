@@ -59,18 +59,8 @@ module swimEvent =
               new BaseTime(a.absolute - b.absolute)
 
 
-//        static member (op_LessThan) (a:BaseTime, b:BaseTime) = 
-//                a.absolute < b.absolute
 
-//              let hundreths = difference % 100M
-//              let difference = difference / 100M
-//              let seconds = difference % 60.0M
-//              let difference = difference / 60.0M
-//              let minutes = difference % 60.0M 
-//              let difference = difference / 60.0M
-//              new BaseTime((int)difference,(int)minutes,(int)seconds,(int)hundreths)
-
-        static member LcmToScy (a:BaseTime, (factor:decimal), turnPadding) =
+    let LcmToScy (a:BaseTime, (factor:decimal), turnPadding) =
               let absolute = (a.absolute - (secondsToHundreths turnPadding))
               let converted = decimal(absolute) / factor
               new BaseTime(converted)
@@ -84,17 +74,28 @@ module swimEvent =
               let time = a.Time - b.Time
               new SwimTime<'w>(time, a.distance, a.stroke)
           
+        override x.ToString() =
+            time.ToString()
 
-        static member toSCY  (a:SwimTime<LCM>) =
-            match (a.stroke, a.distance) with
-                |  (Butterfly, 50) ->  new SwimTime<SCY>(BaseTime.LcmToScy (a.Time, MeterToYardFactor, 0.7M), a.distance, a.stroke)
-                |  (Freestyle, 50) ->  new SwimTime<SCY>(BaseTime.LcmToScy (a.Time, MeterToYardFactor, 0.8M), a.distance, a.stroke)
-                |  (Butterfly, 100) -> new SwimTime<SCY>(BaseTime.LcmToScy (a.Time, MeterToYardFactor, 1.4M), a.distance, a.stroke)
-                | _ -> new SwimTime<SCY>(BaseTime(0,0,0,0),a.distance, a.stroke) 
-//                |  Freestyle -> printfn "Free"
-//                |  Breaststroke -> printfn "Breast"
-//                |  Backstroke -> printfn "Back"
-//                |  Medley -> printfn "IM"
+    let toSCY  (a:SwimTime<LCM>) =
+        match (a.stroke, a.distance) with
+            |   (Freestyle, 50)     -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 0.8M), a.distance, a.stroke)
+            |   (Freestyle, 100)    -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 1.6M), a.distance, a.stroke)
+            |   (Freestyle, 200)    -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 3.2M), a.distance, a.stroke)
+            |   (Freestyle, 400)    -> new SwimTime<SCY>(LcmToScy (a.Time, 0.8925M,           0.0M), 500,        a.stroke)
+            |   (Freestyle, 800)    -> new SwimTime<SCY>(LcmToScy (a.Time, 0.8925M,           0.0M), 800,        a.stroke)
+            |   (Freestyle, 1500)   -> new SwimTime<SCY>(LcmToScy (a.Time, 1.02M,             0.0M), 1560,       a.stroke)
+            |   (Butterfly, 50)     -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 0.7M), a.distance, a.stroke)
+            |   (Butterfly, 100)    -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 1.4M), a.distance, a.stroke)
+            |   (Butterfly, 200)    -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 2.8M), a.distance, a.stroke)
+            |   (Backstroke, 50)    -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 0.6M), a.distance, a.stroke)
+            |   (Backstroke, 100)   -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 1.2M), a.distance, a.stroke)
+            |   (Backstroke, 200)   -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 2.4M), a.distance, a.stroke)
+            |   (Breaststroke, 50)  -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 1.0M), a.distance, a.stroke)
+            |   (Breaststroke, 100) -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 2.0M), a.distance, a.stroke)
+            |   (Breaststroke, 200) -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 4.0M), a.distance, a.stroke)
+            |   (Medley, 400)       -> new SwimTime<SCY>(LcmToScy (a.Time, MeterToYardFactor, 6.4M), a.distance, a.stroke)
+            | _ -> new SwimTime<SCY>(BaseTime(0,0,0,0),a.distance, a.stroke) 
                     
                 
         

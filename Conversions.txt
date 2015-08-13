@@ -1,0 +1,68 @@
+Short Course Yards to Long Course Meters
+
+Stroke	---------------50's---------------
+Butterfly		(Yards Time) x 1.11 + 0.7 sec
+Backstroke		(Yards Time) x 1.11 + 0.6 sec
+Breaststroke	(Yards Time) x 1.11 + 1.0 sec
+Freestyle		(Yards Time) x 1.11 + 0.8 sec
+Stroke	---------------100's---------------
+Butterfly		(Yards Time) x 1.11 + 1.4 sec
+Backstroke		(Yards Time) x 1.11 + 1.2 sec
+Breaststroke	(Yards Time) x 1.11 + 2.0 sec
+Freestyle		(Yards Time) x 1.11 + 1.6 sec
+Stroke	---------------200's---------------
+Butterfly		(Yards Time) x 1.11 + 2.8 sec
+Backstroke		(Yards Time) x 1.11 + 2.4 sec
+Breaststroke	(Yards Time) x 1.11 + 4.0 sec
+Freestyle		(Yards Time) x 1.11 + 3.2 sec
+Ind. Medley		(Yards Time) x 1.11 + 3.2 sec
+Stroke	---------------400's---------------
+Ind. Medley		(Yards Time) x 1.11 + 6.4 sec
+
+
+(Short Course Yards to Short Course Meter: Multiply by 1.11)
+-------------------------------------------------------------
+
+Long Course Meters to Short Course Yards
+
+Stroke	---------------50's---------------
+Butterfly		(Meters Time - 0.7 Sec) / 1.11
+Backstroke		(Meters Time - 0.6 Sec) / 1.11
+Breaststroke	(Meters Time - 1.0 Sec) / 1.11
+Freestyle		(Meters Time - 0.8 Sec) / 1.11
+Stroke	---------------100's---------------
+Butterfly		(Meters Time - 1.4 Sec) / 1.11
+Backstroke		(Meters Time - 1.2 Sec) / 1.11
+Breaststroke	(Meters Time - 2.0 Sec) / 1.11
+Freestyle		(Meters Time - 1.6 Sec) / 1.11
+Stroke	---------------200's---------------
+Butterfly		(Meters Time - 2.8 Sec) / 1.11
+Backstroke		(Meters Time - 2.4 Sec) / 1.11
+Breaststroke	(Meters Time - 4.0 Sec) / 1.11
+Freestyle		(Meters Time - 3.2 Sec) / 1.11
+Ind. Medley		(Meters Time - 3.2 Sec) / 1.11
+Stroke	---------------400's---------------
+Ind. Medley		(Meters Time - 6.4 Sec) / 1.11
+
+
+(Long Course Meters to Short Course Meters: Just subtract seconds)
+Conversion For Distance Events
+
+400/800 meters (long course) converts to 500/1000 yards by dividing meter time by .8925.
+1500 meters (long course) converts to 1650 yards by dividing meter time by 1.02.
+500/1000 yards converts to 400/800 meters (long course) by multiplying by .8925.
+1650 yards converts to 1500 meters (long course) by multiplying by 1.02.
+To convert Long Course Meters to Short Course Meters use the following formulas for distance events:
+400 freestyle: long course time - 6.4 seconds = short course meters time.
+800 freestyle: long course time - 12.8 seconds = short course meters time.
+1500 freestyle: long course time - 24.0 seconds = short course meters time.
+Altitude Adjustment
+
+Event			Distance	3000-4250 ft.	4251-6500 ft.	Above 6500 ft.
+				200			.50 Sec			1.20 Sec		1.60 Sec
+				400 or 500	2.50 Sec		5.00 Sec		7.00 Sec
+			800 Free Relay	2.00 Sec		4.80 Sec		6.40 Sec
+			800 or 1000		5.0 Sec			10.00 Sec		15.00 Sec
+			1500 or 1650	11.00 Sec		23.00 Sec		32.50 Sec
+Subtract the time indicated above from the actual time achieved at that altitude.  This is the time to be used on the entry form and seeding will be based on that time.  Information relative to the adjustment must be shown in a seperate statement accompanying the entry form.  This statement must include the name of the swimmer, event, date of performance, elevation location, actual time, corrected time, and signature of coach or person certifying the entry.
+ 
