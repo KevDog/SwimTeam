@@ -101,10 +101,5 @@ module swimEvent =
         
  
 
- 
-//
-//    type SwimEvent< [<Measure>] 'a> = {participants: Participants; members:Members; time: SwimTime<'a>}
-//    type Result< [<Measure>] 'a> = {swimmer: swimmer.Swimmer; time: SwimEvent<'a>}
 
-//    let scyToLcm a:SwimEvent<SCY> =
         
